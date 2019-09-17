@@ -1,4 +1,29 @@
 .home {
+	
+header
+{
+	width: 1000px;
+	display: flex;
+	flex-flow: wrap;
+	justify-content: flex-start;
+
+	.header-image
+	{
+		background-image: url("../img/fun-bus.jpg");
+		width:800px;
+		height: 300px;
+		background-repeat: no-repeat;
+		border-top: 2px dashed @navigation-border;
+	}
+	
+	.header-text
+	{
+		width: 800px;
+		height: 300px;
+		margin-top: 20px;
+		border-bottom: 2px dashed @navigation-border;
+	}
+}
 
   .content-section {
     margin: 30px 0;
@@ -56,6 +81,38 @@
     .destination {
       width: 30%;
       margin-bottom: 30px;
+		
+	.btn
+		{
+			text-align: center;
+			.create-buttons(1.7em, none, white, #0B5345, none, 10px, 0px, 10px 15px 10px 15px);
+		}
     }
   }
+	
+	@media @mobile
+	{
+		nav
+		{
+			flex-flow: column;
+			justify-content: center;
+			text-align: center;
+		}
+
+		.nav-elements { justify-content: center; }
+
+		header, p, .container.home, .header-text, .header-image, .content-section, .img-content, img-content img, .content-destination, .content-pick, .text-content, .btn { width: 450px; }
+		
+		img, .container.home {max-width: none; }
+
+		.content-section, .content-destination, .content-pick { flex-flow: column; align-content: center; }
+
+		.header-image, .img-content
+		{
+			background-size: contain;
+		}
+		
+		.container.home { margin-left: 25px; margin-right: 25px; }
+	}
 }// home
+
